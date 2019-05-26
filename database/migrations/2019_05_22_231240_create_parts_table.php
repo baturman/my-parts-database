@@ -16,14 +16,12 @@ class CreatePartsTable extends Migration
         Schema::create('parts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->longText('description')->nullable();
+            $table->string('description');
             $table->integer('stock')->nullable()->default(0);
             $table->string('url')->nullable();
-            $table->string('brand')->nullable();
-            $table->string('model')->nullable();
             $table->double('price')->nullable();
             $table->string('slug');
-            $table->string('location');
+            $table->unsignedInteger('location');
             $table->longText('notes')->nullable();
             $table->unsignedInteger('subcategory_id');
             $table->timestamps();

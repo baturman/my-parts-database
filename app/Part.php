@@ -22,12 +22,10 @@ class Part extends Model implements HasMedia
     protected $fillable = [
         'name',
         'description',
-        'amount',
+        'stock',
         'url',
-        'brand',
-        'model',
         'price',
-        'location'
+        'notes'
     ];
 
     public function subcategory()
@@ -42,9 +40,14 @@ class Part extends Model implements HasMedia
                 return $file->mimeType === 'image/jpeg' || $file->mimeType === 'image/svg+xml' || $file->mimeType === 'image/png' || $file->mimeType === 'image/jpg';
             });
 
+        $this->addMediaCollection('document')
+            ->acceptsFile(function (File $file) {
+                return $file->mimeType === 'application/pdf';
+            });
+
         $this->addMediaCollection('attachments')
             ->acceptsFile(function (File $file) {
-                return $file->mimeType === 'application/pdf' || $file->mimeType === 'application/zip' || $file->mimeType === 'image/png' || $file->mimeType === 'image/jpg';
+                return $file->mimeType === 'application/zip';
             });
 
         try {
