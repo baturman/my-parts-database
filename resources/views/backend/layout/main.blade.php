@@ -12,6 +12,7 @@
     <link href="{{ asset('css/nunito.css') }}" rel="stylesheet">
     <link href="{{ asset('css/backend.css') }}" rel="stylesheet">
 
+    @yield('css')
 </head>
 
 <body>
@@ -35,6 +36,8 @@
 <script src="{{ asset('plugins/jquery/jquery-3.4.1.min.js') }}"></script>
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/backend.js') }}"></script>
+
+@yield('scripts')
 
 </body>
 
