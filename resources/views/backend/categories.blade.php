@@ -23,6 +23,7 @@
             <button id="create-sub-category-btn" type="button" class="btn btn-secondary btn-fixed-200" data-toggle="modal" data-target="#sub-category-create-modal">Create Subcategory</button>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-12">
             @foreach($categories as $category)
@@ -35,7 +36,11 @@
                         <hr class="mt-1 mb-2"/>
                     </div>
                     @foreach($category->subcategories as $subcategory)
-                        <div class="col-md-4 font-weight-light">{{ $subcategory->name }} (<a class="text-info" href="#">Edit</a>) (<a class="text-danger" href="#">Delete</a>)</div>
+                        <div class="col-md-4 font-weight-light">
+                            <span id="sc-{{ $subcategory->id }}">{{ $subcategory->name }}</span>
+                            (<a href="#" class="text-info sc-edit-select" data-item-id="{{ $subcategory->id }}" >Edit</a>)
+                            (<a href="#" class="text-danger sc-delete-select" data-item-id="{{ $subcategory->id }}" data-item-name="{{ $subcategory->name }}">Delete</a>)
+                        </div>
                     @endforeach
                 </div>
                 <br />
@@ -47,10 +52,10 @@
     <div class="modal fade" id="main-category-edit-modal" tabindex="-1" role="dialog" aria-labelledby="main-category-edit-modal" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-info text-light">
+                <div class="modal-header bg-light text-dark">
                     <h5 class="modal-title" id="exampleModalCenterTitle">Edit Main Category</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="text-light">&times;</span>
+                        <span aria-hidden="true" class="text-dark">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -83,10 +88,10 @@
     <div class="modal fade" id="main-category-create-modal" tabindex="-1" role="dialog" aria-labelledby="main-category-create-modal" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-info text-light">
+                <div class="modal-header bg-light text-dark">
                     <h5 class="modal-title" id="exampleModalCenterTitle">Create Main Category</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="text-light">&times;</span>
+                        <span aria-hidden="true" class="text-dark">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -162,10 +167,10 @@
     <div class="modal fade" id="sub-category-create-modal" tabindex="-1" role="dialog" aria-labelledby="sub-category-create-modal" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-info text-light">
+                <div class="modal-header bg-light text-dark">
                     <h5 class="modal-title" id="exampleModalCenterTitle">Create Subcategory</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="text-light">&times;</span>
+                        <span aria-hidden="true" class="text-dark">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -198,6 +203,97 @@
                 </div>
                 <div class="modal-footer bg-light">
                     <button id="sub-category-create-btn" type="button" class="btn btn-primary btn-fixed-150">Create</button>
+                    <button type="button" class="btn btn-secondary btn-fixed-150" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subcategory Edit Modal -->
+    <div class="modal fade" id="sub-category-edit-modal" tabindex="-1" role="dialog" aria-labelledby="sub-category-edit-modal" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-light text-dark">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Edit Subcategory</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="text-dark">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="sub-category-edit-form" autocomplete="off" >
+                        @csrf
+                        <div class="form-group row">
+                            <label for="create-sc-name" class="col-sm-2 col-form-label">Name:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="edit-sc-name" name="name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="edit-sc-category-id" class="col-sm-2 col-form-label">Category:</label>
+                            <div class="col-sm-9">
+                                <select id="edit-sc-category-id" name="category_id" style="width: 100%">
+                                    <option value=""></option>
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="edit-sc-description" class="col-sm-2 col-form-label">Description:</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control" id="edit-sc-description" name="description" style="height: 350px"></textarea>
+                            </div>
+                        </div>
+                        <input type="hidden" id="sub-category-id" name="sub-category-id" />
+                    </form>
+                </div>
+                <div class="modal-footer bg-light">
+                    <button id="sub-category-edit-btn" type="button" class="btn btn-primary btn-fixed-150">Save</button>
+                    <button type="button" class="btn btn-secondary btn-fixed-150" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subcategory Delete Modal -->
+    <div class="modal fade" id="sub-category-delete-modal" tabindex="-1" role="dialog" aria-labelledby="sub-category-delete-modal" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content modal-height-400p">
+                <div class="modal-header bg-danger text-light">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Delete Subcategory</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="text-light">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        This will delete subcategory <span id="sub-category-name" class="font-weight-bold"></span>.
+                        If you would like to delete all parts in this subcategory, click <b>Delete</b> button. Optionally, you can select another
+                        subcategory below and click <b>Move & Delete</b> button.</p>
+                    <input type="hidden" id="sc-del-id" />
+                    <div class="card card-body p-3 text-center">
+                        <p class="font-weight-bold">Optional:</p>
+                        <p>Migrate parts to:</p>
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <select id="new_subcategory_id" name="new_subcategory_id" style="width: 100%">
+                                    <option value=""></option>
+                                    @foreach($subcategories as $subcategory)
+                                        <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer bg-light">
+                    <button id="sub-category-delete-btn" type="button" class="btn btn-danger btn-fixed-150">Delete</button>
+                    <button id="sub-category-move-and-delete-btn" type="button" class="btn btn-primary btn-fixed-150">Move & Delete</button>
                     <button type="button" class="btn btn-secondary btn-fixed-150" data-dismiss="modal">Close</button>
                 </div>
             </div>

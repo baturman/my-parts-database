@@ -6,12 +6,13 @@ use App\Http\Resources\SubcategoryResource;
 use App\Subcategory;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class SubcategoryAjaxController extends BaseAjaxController
 {
     public function index(){
-        $subcategories = Subcategory::all();
+        $subcategories = Subcategory::with('category');
         return $this->sendResponse("success", "All subcategories are retrieved successfully.", SubcategoryResource::collection($subcategories));
     }
 
