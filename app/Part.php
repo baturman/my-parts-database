@@ -32,7 +32,7 @@ class Part extends Model implements HasMedia
 
     public function subcategory()
     {
-        return $this->belongsTo('App\SubCategory', 'sub_category_id', 'id');
+        return $this->belongsTo('App\Subcategory', 'subcategory_id', 'id');
     }
 
     public function registerMediaCollections()

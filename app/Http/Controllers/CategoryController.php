@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\SubCategory;
+use App\Subcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Mockery\Exception;
@@ -24,7 +24,7 @@ class CategoryController extends Controller
         ]);
 
         try{
-            $subcategory = new SubCategory();
+            $subcategory = new Subcategory();
             $data = $request->only($subcategory->getFillable());
             $subcategory->fill($data);
             $subcategory->category_id = $request->get('category_id');

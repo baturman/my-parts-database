@@ -4,11 +4,13 @@
       <w>arduino</w>
       <w>bluetooth</w>
       <w>csrf</w>
+      <w>endisset</w>
       <w>fillable</w>
       <w>microcontroller</w>
       <w>nunito</w>
       <w>sluggable</w>
       <w>tagify</w>
+      <w>tinymce</w>
     </words>
   </dictionary>
 </component>

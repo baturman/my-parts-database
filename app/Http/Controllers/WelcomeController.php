@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Http\Resources\PartsResource;
 use App\Part;
-use App\SubCategory;
+use App\Subcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -26,7 +26,7 @@ class WelcomeController extends Controller
         $parts = Part::whereIn('id', $ids)->get();
         $parts->load('subcategory.category');
 
-        $subcategory = SubCategory::find(2);
+        $subcategory = Subcategory::find(2);
         Log::info($subcategory->getFirstMediaUrl('cover'));
         return PartsResource::collection($parts);
 
@@ -39,7 +39,7 @@ class WelcomeController extends Controller
 
     public function subcategory($slug){
         Log::info("Sub category..");
-        $subcategory = SubCategory::where('slug', '=', $slug)->first();
+        $subcategory = Subcategory::where('slug', '=', $slug)->first();
         return view('subcategory')->with('subcategory', $subcategory);
     }
 

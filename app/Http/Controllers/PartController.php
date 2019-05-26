@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Part;
-use App\SubCategory;
+use App\Subcategory;
 use Cviebrock\EloquentTaggable\Services\TagService;
 use Exception;
 use Illuminate\Http\Request;

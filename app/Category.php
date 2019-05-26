@@ -9,7 +9,6 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 class Category extends Model implements HasMedia
 {
-
     use HasMediaTrait;
 
     protected $fillable = [
@@ -18,7 +17,7 @@ class Category extends Model implements HasMedia
 
     public function subcategories()
     {
-        return $this->hasMany('App\SubCategory')->orderBy('name');
+        return $this->hasMany('App\Subcategory')->orderBy('name');
     }
 
 }

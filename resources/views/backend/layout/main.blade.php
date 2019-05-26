@@ -7,7 +7,12 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"> -->
+
     <link href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/font-awesome/css/all.min.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('plugins/toastr/toastr-custom.css') }}" rel="stylesheet">
 
     <link href="{{ asset('css/nunito.css') }}" rel="stylesheet">
     <link href="{{ asset('css/backend.css') }}" rel="stylesheet">
@@ -35,6 +40,9 @@
 
 <script src="{{ asset('plugins/jquery/jquery-3.4.1.min.js') }}"></script>
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('plugins/toastr/toastr.min.js') }}"></script>
+
+<script src="{{ asset('js/global.js') }}"></script>
 <script src="{{ asset('js/backend.js') }}"></script>
 
 @yield('scripts')

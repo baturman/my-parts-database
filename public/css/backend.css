@@ -10,6 +10,18 @@ h1{
     font-size: 2.4rem;
 }
 
+h2{
+    font-weight: 700;
+    font-size: 2.0rem;
+}
+
+h3{
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+
+
 /* Side Bar - Toggling */
 #sidebar-wrapper {
     position: fixed;
@@ -25,6 +37,7 @@ h1{
     padding: 0.86rem 1.25rem;
     font-size: 1.2rem;
     font-weight: 700;
+    height: 56px;
 }
 
 #sidebar-wrapper .list-group {
@@ -81,5 +94,37 @@ h1{
     #wrapper.toggled #sidebar-wrapper {
         margin-left: -15rem;
     }
+}
+
+
+/* Some Fixes */
+.modal-header{
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
+}
+
+.sidebar-rb{
+    border-right: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.btn-fixed-150 {
+    width: 150px !important;
+}
+
+.btn-fixed-200 {
+    width: 200px !important;
+}
+
+.error{
+    color: #dc3545;
+    font-size: smaller;
+}
+
+.modal-height-600p{
+    height: 600px;
+}
+
+.modal-height-400p{
+    height: 400px;
 }
 
