@@ -3,7 +3,12 @@ let Categories = function() {
     let initComponents = function(){
         $('#new_category_id').select2({
             theme: 'bootstrap4',
-            placeholder: 'Select Main Category..',
+            placeholder: 'Select Category..',
+        });
+
+        $('#create-sc-category-id').select2({
+            theme: 'bootstrap4',
+            placeholder: 'Select Category..',
         });
     };
 
@@ -168,16 +173,18 @@ let Categories = function() {
     let initMainCategoryMoveAndDeleteConfirmButton = function(){
         $('#main-category-move-and-delete-btn').on('click', function () {
             $('#main-category-delete-modal').modal('hide');
-            /*
-            window.ajaxDeleteRequest(
-                '/ajax/category/' + mainCategoryId,
+            let mainCategoryId = $('#mc-del-id').val();
+            let targetCategoryId = $('#new_category_id').val();
+
+            window.ajaxGetRequest(
+                '/ajax/category/migrate/' + mainCategoryId + "/" + targetCategoryId,
                 function (data) {
                     let status = data['status'];
                     let message = data['message'];
                     window.showNotification(status, message);
                 }
             );
-             */
+
         });
     };
 
@@ -194,6 +201,65 @@ let Categories = function() {
         });
     };
 
+    let initSubcategoryCreateTinyMCEEditor = function () {
+        tinymce.init({
+            selector: "textarea#create-sc-description",
+            plugins: "link",
+            toolbar: ["undo redo | styleselect | bold italic underline",
+                'alignleft aligncenter alignright alignjustify | removeformat'],
+            resize: false,
+            height: 350,
+            content_css: '/css/tinymce.css',
+        });
+    };
+
+    let initSubcategoryCreateFormValidation = function () {
+        let form = $('#sub-category-create-form');
+
+        form.validate({
+            rules: {
+                name: {
+                    required: true,
+                    maxlength: 40,
+                    minlength: 5
+                },
+                category_id:{
+                    required: true
+                }
+            },
+            errorPlacement: function(error, e) {
+                e.parents('.form-group').append(error);
+            },
+            submitHandler: function () {
+                window.tinymce.triggerSave();
+
+                let data = form.serializeArray();
+
+                $('#sub-category-create-modal').modal('hide');
+
+                window.ajaxPostRequest(
+                    '/ajax/subcategory',
+                    data,
+                    function (data) {
+                        let status = data['status'];
+                        let message = data['message'];
+                        window.showNotification(status, message);
+                        if (status === 'success'){
+                            form.trigger('reset');
+                        }
+                    }
+                );
+            }
+        });
+    };
+
+    let initSubcategoryCreateConfirmButton = function(){
+        $('#sub-category-create-btn').on('click', function () {
+            $('#sub-category-create-form').submit();
+        });
+    };
+
+
     return {
         init: function() {
             initComponents();
@@ -206,6 +272,10 @@ let Categories = function() {
             initMainCategoryCreateTinyMCEEditor();
             initMainCategoryCreateFormValidation();
             initMainCategoryCreateConfirmButton();
+
+            initSubcategoryCreateTinyMCEEditor();
+            initSubcategoryCreateFormValidation();
+            initSubcategoryCreateConfirmButton();
 
             initMainCategoryDeleteButton();
             initMainCategoryDeleteConfirmButton();

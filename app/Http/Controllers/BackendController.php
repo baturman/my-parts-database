@@ -12,4 +12,8 @@ class BackendController extends Controller
         return view('backend.categories')
             ->with('categories', $categories);
     }
+
+    public function dashboard(){
+        return view('backend.dashboard');
+    }
 }

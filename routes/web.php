@@ -11,9 +11,12 @@
 |
 */
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('dashboard', 'BackendController@dashboard')->name('backend.dashboard');
+    Route::get('categories', 'BackendController@categories')->name('backend.categories');
+});
+
 Route::get('/', 'WelcomeController@index')->name('welcome');
-Route::get('dashboard', 'HomeController@dashboard')->name('backend.dashboard');
-Route::get('categories', 'BackendController@categories')->name('backend.categories');
 Route::get('find', 'WelcomeController@find')->name('find');
 Route::get('browse', 'WelcomeController@browse')->name('browse');
 Route::get('browse/sub-category/{slug}', 'WelcomeController@subcategory')->name('subcategory');
@@ -31,4 +34,8 @@ Route::post('subcategories', 'CategoryController@store')->name('subcategory.stor
 
 Route::group(['prefix' => 'ajax'], function(){
     Route::resource('category', 'Ajax\CategoriesAjaxController')->except(['create', 'edit']);
+    Route::get('category/migrate/{source}/{target}', 'Ajax\CategoriesAjaxController@migrate');
+
+    Route::resource('subcategory', 'Ajax\SubcategoryAjaxController')->except(['create', 'edit']);
+    Route::get('subcategory/migrate/{source}/{target}', 'Ajax\SubcategoryAjaxController@migrate');
 });

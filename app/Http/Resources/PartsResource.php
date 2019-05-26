@@ -20,7 +20,7 @@ class PartsResource extends JsonResource
             'brand' => $this->brand,
             'model' => $this->model,
             'thumb' => $this->getFirstMediaUrl('images', 'thumbs'),
-            'subcategory' => new SubCategoryResource($this->whenLoaded('subcategory')),
+            'subcategory' => new SubcategoryResource($this->whenLoaded('subcategory')),
 
         ];
     }

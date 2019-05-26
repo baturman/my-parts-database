@@ -120,6 +120,15 @@ h3{
     font-size: smaller;
 }
 
+#create-sc-name-error{
+    padding-left: 150px;
+    padding-top: 3px;
+}
+#create-sc-category-id-error{
+    padding-left: 150px;
+    padding-top: 3px;
+}
+
 .modal-height-600p{
     height: 600px;
 }
