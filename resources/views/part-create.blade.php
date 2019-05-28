@@ -43,7 +43,7 @@
                     <div class="card-header">Add New Part</div>
 
                     <div class="card-body">
-                        <form autocomplete="off" method="post" action="{{ route('part.store') }}" enctype=multipart/form-data>
+                        <form autocomplete="off" method="post" action="{{ route('part.store') }}" enctype="multipart/form-data" >
                             @csrf
                             <div class="form-group row">
                                 <label for="name" class="col-sm-2 col-form-label">Name *</label>

@@ -21,8 +21,8 @@ class CreatePartsTable extends Migration
             $table->string('url')->nullable();
             $table->double('price')->nullable();
             $table->string('slug');
-            $table->unsignedInteger('location');
             $table->longText('notes')->nullable();
+            $table->unsignedInteger('location_id');
             $table->unsignedInteger('subcategory_id');
             $table->timestamps();
 

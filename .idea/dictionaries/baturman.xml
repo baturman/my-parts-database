@@ -4,13 +4,20 @@
       <w>arduino</w>
       <w>bluetooth</w>
       <w>csrf</w>
+      <w>datasheet</w>
+      <w>dropzone</w>
       <w>endisset</w>
       <w>fillable</w>
+      <w>hdmi</w>
       <w>microcontroller</w>
+      <w>microcontrollers</w>
       <w>nunito</w>
+      <w>oled</w>
+      <w>pinout</w>
       <w>sluggable</w>
       <w>tagify</w>
       <w>tinymce</w>
+      <w>uart</w>
     </words>
   </dictionary>
 </component>

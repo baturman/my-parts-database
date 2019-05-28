@@ -7,8 +7,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"> -->
-
     <link href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('plugins/font-awesome/css/all.min.css') }}" rel="stylesheet">
 
@@ -24,10 +22,9 @@
 
 <div class="d-flex" id="wrapper">
 
-    @include('backend.layout.sidebar')
-
     <div id="page-content-wrapper">
         @include('backend.layout.navbar')
+
         <div class="container-fluid pt-3">
             <div class="pt-5 pl-3 pr-3">
                 @yield('content')

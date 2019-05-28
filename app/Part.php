@@ -33,22 +33,32 @@ class Part extends Model implements HasMedia
         return $this->belongsTo('App\Subcategory', 'subcategory_id', 'id');
     }
 
+    public function location()
+    {
+        return $this->belongsTo('App\Location', 'location_id', 'id');
+    }
+
     public function registerMediaCollections()
     {
         $this->addMediaCollection('images')
             ->acceptsFile(function (File $file) {
                 return $file->mimeType === 'image/jpeg' || $file->mimeType === 'image/svg+xml' || $file->mimeType === 'image/png' || $file->mimeType === 'image/jpg';
-            });
+            })->singleFile();
 
-        $this->addMediaCollection('document')
+        $this->addMediaCollection('datasheet')
             ->acceptsFile(function (File $file) {
-                return $file->mimeType === 'application/pdf';
-            });
+                return $file->mimeType === 'application/zip' || $file->mimeType === 'application/pdf' || $file->mimeType === 'image/jpeg' || $file->mimeType === 'image/svg+xml' || $file->mimeType === 'image/png' || $file->mimeType === 'image/jpg';
+            })->singleFile();
+
+        $this->addMediaCollection('pinout')
+            ->acceptsFile(function (File $file) {
+                return $file->mimeType === 'image/jpeg' || $file->mimeType === 'image/svg+xml' || $file->mimeType === 'image/png' || $file->mimeType === 'image/jpg';
+            })->singleFile();
 
         $this->addMediaCollection('attachments')
             ->acceptsFile(function (File $file) {
-                return $file->mimeType === 'application/zip';
-            });
+                return $file->mimeType === 'application/zip' || $file->mimeType === 'application/pdf';
+            })->singleFile();
 
         try {
             $this->addMediaConversion('thumbs')
@@ -60,14 +70,6 @@ class Part extends Model implements HasMedia
             Log::error("Exception thrown during media conversion. Exception: \n" . $e);
         }
 
-        try {
-            $this->addMediaConversion('cover')
-                ->width(200)
-                ->sharpen(8)
-                ->performOnCollections('images');
-        } catch (InvalidManipulation $e) {
-            Log::error("Exception thrown during media conversion. Exception: \n" . $e);
-        }
     }
 
     public function searchableAs(){

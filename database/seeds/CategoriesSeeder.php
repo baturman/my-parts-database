@@ -13,7 +13,7 @@ class CategoriesSeeder extends Seeder
     public function run()
     {
         $categories = array(
-            'Microcontroller', // 1
+            'Microcontrollers', // 1
             'Breakout Boards', // 2
             'Wireless Communication', // 3
             'Sensors', // 4
@@ -22,7 +22,7 @@ class CategoriesSeeder extends Seeder
             'Integrated Circuits', // 7
             'Motors', // 8
             'Cables', // 9
-            'Switch / Buttons', // 10
+            'Switches / Buttons', // 10
             'Power', // 11
             'Sockets, Jacks and Connectors', // 12
             'PCB Materials', // 13

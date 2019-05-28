@@ -37,7 +37,7 @@ class Location extends Model implements HasMedia
 
     public function parts()
     {
-        return $this->hasMany('App\Part')->orderBy('name');
+        return $this->hasMany('App\Part');
     }
 
 

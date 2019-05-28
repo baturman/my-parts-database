@@ -40,18 +40,6 @@ class SubcategoriesSeeder extends Seeder
         $subcategory->save();
 
         $subcategory = new subcategory();
-        $subcategory->name = "LCD/OLED Displays";
-        $subcategory->category_id = 2;
-        $subcategory->description = "A liquid-crystal display is a flat-panel display or other electronically modulated optical device that uses the light-modulating properties of liquid crystals. Liquid crystals do not emit light directly, instead using a backlight or reflector to produce images in colour or monochrome.";
-        $subcategory->save();
-
-        $subcategory = new subcategory();
-        $subcategory->name = "Led Matrix Displays";
-        $subcategory->category_id = 2;
-        $subcategory->description = "";
-        $subcategory->save();
-
-        $subcategory = new subcategory();
         $subcategory->name = "Relay Boards";
         $subcategory->category_id = 2;
         $subcategory->description = "The relay module is a separate hardware device used for remote device switching. With it you can remotely control devices over a network or the Internet. Devices can be remotely powered on or off with commands coming from ClockWatch Enterprise delivered over a local or wide area network.";
@@ -169,6 +157,12 @@ class SubcategoriesSeeder extends Seeder
 
         $subcategory = new subcategory();
         $subcategory->name = "Touch Sensors";
+        $subcategory->category_id = 4;
+        $subcategory->description="";
+        $subcategory->save();
+
+        $subcategory = new subcategory();
+        $subcategory->name = "Water Flow & Rain Sensors";
         $subcategory->category_id = 4;
         $subcategory->description="";
         $subcategory->save();
@@ -512,7 +506,7 @@ class SubcategoriesSeeder extends Seeder
 
         // Sockets / Jacks / Connectors
         $subcategory = new subcategory();
-        $subcategory->name = "RJ Jacks";
+        $subcategory->name = "RJ Connectors";
         $subcategory->category_id = 12;
         $subcategory->description="";
         $subcategory->save();
@@ -536,13 +530,13 @@ class SubcategoriesSeeder extends Seeder
         $subcategory->save();
 
         $subcategory = new subcategory();
-        $subcategory->name = "Barrel Connectors";
+        $subcategory->name = "Barrel Jacks";
         $subcategory->category_id = 12;
         $subcategory->description="";
         $subcategory->save();
 
         $subcategory = new subcategory();
-        $subcategory->name = "T Plug";
+        $subcategory->name = "T-Plug Battery Connector";
         $subcategory->category_id = 12;
         $subcategory->description="";
         $subcategory->save();
@@ -561,7 +555,7 @@ class SubcategoriesSeeder extends Seeder
         $subcategory->save();
 
         $subcategory = new subcategory();
-        $subcategory->name = "Fuse Holder";
+        $subcategory->name = "Fuse Sockets";
         $subcategory->category_id = 13;
         $subcategory->description="";
         $subcategory->save();
@@ -591,7 +585,7 @@ class SubcategoriesSeeder extends Seeder
         $subcategory->save();
 
         $subcategory = new subcategory();
-        $subcategory->name = "Dip Socket";
+        $subcategory->name = "Dip Sockets";
         $subcategory->category_id = 5;
         $subcategory->description="";
         $subcategory->save();
@@ -605,6 +599,18 @@ class SubcategoriesSeeder extends Seeder
 
         $subcategory = new subcategory();
         $subcategory->name = "HMI Displays";
+        $subcategory->category_id = 14;
+        $subcategory->description = "";
+        $subcategory->save();
+
+        $subcategory = new subcategory();
+        $subcategory->name = "LCD/OLED Displays";
+        $subcategory->category_id = 14;
+        $subcategory->description = "A liquid-crystal display is a flat-panel display or other electronically modulated optical device that uses the light-modulating properties of liquid crystals. Liquid crystals do not emit light directly, instead using a backlight or reflector to produce images in colour or monochrome.";
+        $subcategory->save();
+
+        $subcategory = new subcategory();
+        $subcategory->name = "Led Matrix Displays";
         $subcategory->category_id = 14;
         $subcategory->description = "";
         $subcategory->save();
@@ -627,8 +633,6 @@ class SubcategoriesSeeder extends Seeder
         $subcategory->category_id = 15;
         $subcategory->description = "";
         $subcategory->save();
-
-
 
 
     }

@@ -52,10 +52,10 @@
     <div class="modal fade" id="main-category-edit-modal" tabindex="-1" role="dialog" aria-labelledby="main-category-edit-modal" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-light text-dark">
+                <div class="modal-header bg-secondary text-light">
                     <h5 class="modal-title" id="exampleModalCenterTitle">Edit Main Category</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="text-dark">&times;</span>
+                        <span aria-hidden="true" class="text-light">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -88,10 +88,10 @@
     <div class="modal fade" id="main-category-create-modal" tabindex="-1" role="dialog" aria-labelledby="main-category-create-modal" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-light text-dark">
+                <div class="modal-header bg-secondary text-light">
                     <h5 class="modal-title" id="exampleModalCenterTitle">Create Main Category</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="text-dark">&times;</span>
+                        <span aria-hidden="true" class="text-light">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -167,10 +167,10 @@
     <div class="modal fade" id="sub-category-create-modal" tabindex="-1" role="dialog" aria-labelledby="sub-category-create-modal" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-light text-dark">
+                <div class="modal-header bg-secondary text-light">
                     <h5 class="modal-title" id="exampleModalCenterTitle">Create Subcategory</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="text-dark">&times;</span>
+                        <span aria-hidden="true" class="text-light">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -213,10 +213,10 @@
     <div class="modal fade" id="sub-category-edit-modal" tabindex="-1" role="dialog" aria-labelledby="sub-category-edit-modal" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-light text-dark">
+                <div class="modal-header bg-secondary text-light">
                     <h5 class="modal-title" id="exampleModalCenterTitle">Edit Subcategory</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="text-dark">&times;</span>
+                        <span aria-hidden="true" class="text-light">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
