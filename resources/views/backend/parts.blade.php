@@ -4,7 +4,6 @@
     <link href="{{ asset('plugins/select2/css/select2.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/select2-bootstrap/select2-bootstrap4.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/DataTables/datatables.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('plugins/tagcomplete/tagcomplete.css') }}" rel="stylesheet" />
 
 @endsection
 
@@ -170,7 +169,6 @@
     <script src="{{ asset('plugins/jquery-validation/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('plugins/select2/js/select2.min.js') }}"></script>
     <script src="{{ asset('plugins/DataTables/datatables.min.js') }}"></script>
-    <script src="{{ asset('plugins/tagcomplete/tagcomplete.min.js') }}"></script>
 
     <script src="{{ asset('js/parts.js') }}"></script>
 @endsection

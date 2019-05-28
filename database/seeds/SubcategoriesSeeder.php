@@ -40,6 +40,12 @@ class SubcategoriesSeeder extends Seeder
         $subcategory->save();
 
         $subcategory = new subcategory();
+        $subcategory->name = "AC-DC Converters";
+        $subcategory->category_id = 2;
+        $subcategory->description = "AC-DC converters are electrical circuits that transform alternating current (AC) input into direct current (DC) output. They are used in power electronic applications where the power input a 50 Hz or 60 Hz sine-wave AC voltage that requires power conversion for a DC output.";
+        $subcategory->save();
+
+        $subcategory = new subcategory();
         $subcategory->name = "Relay Boards";
         $subcategory->category_id = 2;
         $subcategory->description = "The relay module is a separate hardware device used for remote device switching. With it you can remotely control devices over a network or the Internet. Devices can be remotely powered on or off with commands coming from ClockWatch Enterprise delivered over a local or wide area network.";
@@ -561,7 +567,7 @@ class SubcategoriesSeeder extends Seeder
         $subcategory->save();
 
         $subcategory = new subcategory();
-        $subcategory->name = "PCB Terminals";
+        $subcategory->name = "Terminals";
         $subcategory->category_id = 13;
         $subcategory->description="PCB terminal blocks are modular, insulated devices that mount on printed circuit boards (PCBs) and secure two or more wires together. Terminal blocks are used to secure and/or terminate wires and, in their simplest form, consist of several individual terminals arranged in a long strip.";
         $subcategory->save();
@@ -652,6 +658,10 @@ class SubcategoriesSeeder extends Seeder
         $subcategory->description="A state-owned enterprise in India is called a public sector undertaking or a public sector enterprise. These companies are owned by the union government of India, or one of the many state or territorial governments, or both. The company stock needs to be majority-owned by the government to be a PSU.";
         $subcategory->save();
 
-
+        $subcategory = new subcategory();
+        $subcategory->name = "Panel Sockets";
+        $subcategory->category_id = 15;
+        $subcategory->description="Sockets that can be mounted on a panel. Such as speaker terminals, USB panel type female connector, RJ-45 panel type connector etc.";
+        $subcategory->save();
     }
 }

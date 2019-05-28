@@ -114,6 +114,14 @@ h4{
     color: rgba(0,0,0,0.4);
 }
 
+.icon-color-light{
+    color: rgba(0,0,0,0.1);
+}
+
+.icon-color-normal{
+    color: rgba(0,0,0,0.4);
+}
+
 .tooltip-image{
     height: 128px !important;
     width: 128px !important;

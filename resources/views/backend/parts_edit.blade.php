@@ -120,7 +120,7 @@
                             <div class="row">
                                 <div class="col-md-auto">
                                     <div class="border-light border-3 text-center" style="height: 70px; width: 70px">
-                                        <i class="fas fa-file-pdf font-color-lighter" style="font-size: 48px; line-height: 64px"></i>
+                                        <i class="fas fa-file-pdf @if($part->getFirstMediaUrl('datasheet') === '') icon-color-light @else icon-color-normal @endif" style="font-size: 48px; line-height: 64px"></i>
                                     </div>
                                 </div>
                                 <div class="col">
@@ -141,7 +141,7 @@
                             <div class="row">
                                 <div class="col-md-auto">
                                     <div class="border-light border-3 text-center" style="height: 70px; width: 70px">
-                                        <i class="fas fa-microchip font-color-lighter" style="font-size: 48px; line-height: 64px"></i>
+                                        <i class="fas fa-microchip @if($part->getFirstMediaUrl('pinout') === '') icon-color-light @else icon-color-normal @endif" style="font-size: 48px; line-height: 64px"></i>
                                     </div>
                                 </div>
                                 <div class="col">
@@ -161,7 +161,7 @@
                             <div class="row">
                                 <div class="col-md-auto">
                                     <div class="border-light border-3 text-center" style="height: 70px; width: 70px">
-                                        <i class="fas fa-paperclip font-color-lighter" style="font-size: 48px; line-height: 64px"></i>
+                                        <i class="fas fa-paperclip @if($part->getFirstMediaUrl('attachment') === '') icon-color-light @else icon-color-normal @endif" style="font-size: 48px; line-height: 64px"></i>
                                     </div>
                                 </div>
                                 <div class="col">
@@ -191,7 +191,7 @@
                 <div class="card-body">
                     <div class="form-group">
                         <div class="input-group text">
-                            <textarea class="form-control" id="notes" name="notes" rows="22" style="width: 100%;" ></textarea>
+                            <textarea class="form-control" id="notes" name="notes" rows="22" style="width: 100%;" >{{ $part->notes }}</textarea>
                         </div>
                     </div>
                 </div>

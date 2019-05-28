@@ -39,7 +39,7 @@
             <div class="row">
                 <div class="col-md-12" style="font-weight: bolder">{{ $category->name }}:</div>
                 @foreach($category->subcategories as $subcategory)
-                    <div class="col-md-3"><a href="/browse/sub-category/{{ $subcategory->slug }}">{{ $subcategory->name }}</a> ({{ count($subcategory->parts) }})</div>
+                    <div class="col-md-4"><a href="/browse/sub-category/{{ $subcategory->slug }}">{{ $subcategory->name }}</a> ({{ count($subcategory->parts) }})</div>
                 @endforeach
             </div>
             <br />

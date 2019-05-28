@@ -81,40 +81,36 @@ class PartController extends BaseAjaxController
                 }
             }
 
-
             if ($request->exists('image')){
-                $cover = $request->file('image');
+                $image = $request->file('image');
                 $part
-                    ->addMedia($cover->getRealPath())
-                    ->preservingOriginal()
-                    ->setFileName($cover->getClientOriginalName())
+                    ->addMediaFromRequest('image')
+                    ->setFileName('image.' . $image->extension())
                     ->toMediaCollection('images');
             }
 
             if ($request->exists('attachment')){
                 $attachment = $request->file('attachment');
                 $part
-                    ->addMedia($attachment->getRealPath())
-                    ->preservingOriginal()
-                    ->setFileName($attachment->getClientOriginalName())
+                    ->addMediaFromRequest('attachment')
+                    ->setFileName('attachment.' . $attachment->extension())
                     ->toMediaCollection('attachment');
             }
 
             if ($request->exists('pinout')){
                 $pinout = $request->file('pinout');
+
                 $part
-                    ->addMedia($pinout->getRealPath())
-                    ->preservingOriginal()
-                    ->setFileName($pinout->getClientOriginalName())
+                    ->addMediaFromRequest('pinout')
+                    ->setFileName('pinout.' . $pinout->extension())
                     ->toMediaCollection('pinout');
             }
 
             if ($request->exists('datasheet')){
                 $datasheet = $request->file('datasheet');
                 $part
-                    ->addMedia($datasheet->getRealPath())
-                    ->preservingOriginal()
-                    ->setFileName($datasheet->getClientOriginalName())
+                    ->addMediaFromRequest('datasheet')
+                    ->setFileName('datasheet.' . $datasheet->extension())
                     ->toMediaCollection('datasheet');
             }
 

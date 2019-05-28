@@ -1,26 +1,7 @@
 
 let Parts = function() {
 
-    let tags = [];
-
     let initComponents = function(){
-
-        window.ajaxGetRequest(
-            '/ajax/tags',
-            function (data) {
-                let status = data['status'];
-                if (status === 'info'){
-                    tags = data['data'];
-                    $("#tags").tagComplete({
-                        keylimit: 1,
-                        hide: false,
-                        autocomplete: {
-                            data: tags
-                        }
-                    });
-                }
-            }
-        );
 
         $(document).on('change', '.custom-file-input', function (event) {
             $(this).next('.custom-file-label').html(event.target.files[0].name);
@@ -138,12 +119,6 @@ let Parts = function() {
         $('#part_created_at').html(data['created_at']);
         $('#part_updated_at').html(data['updated_at']);
 
-        let notes = data['notes'];
-
-        if (notes != null){
-            window.tinymce.activeEditor.setContent(notes, {format: 'raw'});
-        }
-
         let tagsFound = false;
         tags.empty();
         data['tags'].forEach(function(entry) {
@@ -240,8 +215,6 @@ let Parts = function() {
         table.on( 'select', function ( e, dt, type, indexes ) {
             if ( type === 'row' ) {
                 let data = (table.rows('.selected').data()[0]);
-                let name = data['tags'];
-                console.log("Selected: " + name);
                 setPartPreview(data);
 
                 $('#edit-part-btn').prop('disabled', false).removeClass('disabled');

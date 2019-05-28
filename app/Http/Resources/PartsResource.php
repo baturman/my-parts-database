@@ -20,7 +20,21 @@ class PartsResource extends JsonResource
         $attachments = array();
 
 
-        foreach ($this->getMedia('attachments') as $media){
+        foreach ($this->getMedia('attachment') as $media){
+            $fob = new stdClass();
+            $fob->file_name = $media->file_name;
+            $fob->file_url = $media->getUrl();
+            array_push($attachments, $fob);
+        }
+
+        foreach ($this->getMedia('datasheet') as $media){
+            $fob = new stdClass();
+            $fob->file_name = $media->file_name;
+            $fob->file_url = $media->getUrl();
+            array_push($attachments, $fob);
+        }
+
+        foreach ($this->getMedia('pinout') as $media){
             $fob = new stdClass();
             $fob->file_name = $media->file_name;
             $fob->file_url = $media->getUrl();
