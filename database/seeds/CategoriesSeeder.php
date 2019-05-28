@@ -22,9 +22,9 @@ class CategoriesSeeder extends Seeder
             'Integrated Circuits', // 7
             'Motors', // 8
             'Cables', // 9
-            'Switches / Buttons', // 10
-            'Power', // 11
-            'Sockets, Jacks and Connectors', // 12
+            'Switches & Buttons', // 10
+            'Battery & Accessories', // 11
+            'Sockets & Connectors', // 12
             'PCB Materials', // 13
             'Displays', // 14
             'Miscellaneous', // 15
