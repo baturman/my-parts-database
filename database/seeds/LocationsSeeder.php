@@ -12,6 +12,7 @@ class LocationsSeeder extends Seeder
      */
     public function run()
     {
+
         $location = new Location();
         $location->name = "SB-22-BLUE-01";
         $location->description = "Medium Double Sided Organizer (Blue)";

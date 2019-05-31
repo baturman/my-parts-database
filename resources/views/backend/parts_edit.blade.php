@@ -88,7 +88,7 @@
                                 @foreach($categories as $category)
                                     <optgroup style="background-color: #e3e3e3" label="{{ $category->name }}">
                                         @foreach($category->subcategories as $subcategory)
-                                            <option value="{{ $subcategory->id }}" @if($part->subcategory_id = $subcategory->id) selected @endif>{{ $subcategory->name }}</option>
+                                            <option value="{{ $subcategory->id }}" @if($part->subcategory_id == $subcategory->id) selected @endif>{{ $subcategory->name }}</option>
                                         @endforeach
                                     </optgroup>
                                 @endforeach
@@ -244,8 +244,8 @@
 
         window.tinymce.init({
             selector: "textarea#notes",
-            plugins: "link",
-            toolbar: ["undo redo | styleselect | bold italic underline",
+            plugins: "link image emoticons preview table visualblocks wordcount powerpaste",
+            toolbar: ["undo redo | styleselect forecolor backcolor | bold italic underline",
                 'alignleft aligncenter alignright alignjustify | removeformat'],
             resize: false,
             height: 600,

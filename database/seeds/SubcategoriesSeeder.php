@@ -615,6 +615,12 @@ class SubcategoriesSeeder extends Seeder
         $subcategory->description = "Led matrix is a dot matrix of large display, low resolution value and is useful for both industrial or commercial displays as well as for hobbyist human interface machines. ... In this LED matrix each can be control individually by controlling the electricity through each pair of columns or rows diodes.";
         $subcategory->save();
 
+        $subcategory = new subcategory();
+        $subcategory->name = "Digital Panel Meters";
+        $subcategory->category_id = 14;
+        $subcategory->description = "Digital panel meters are digital displays intended to be mounted in a panel, such as a control panel. They typically read some type of input, be it a voltage, current, or resistance, and display its value digitally. Often this input is a measurement from a sensor which is converted and displayed as a temperature, pressure, or other system variable. These meters may also act as simple controllers which trip a switch or perform a simple function when the reading reaches a preset measurement.";
+        $subcategory->save();
+
         // Miscellaneous
         $subcategory = new subcategory();
         $subcategory->name = "Heat Sinks";

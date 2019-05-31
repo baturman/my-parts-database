@@ -187,7 +187,6 @@ let Parts = function() {
                 { data: "id" },
                 { data: "name" },
                 { data: "stock" },
-                { data: "price" },
                 { data: "subcategory.name" },
                 { data: "location.name" }
             ],
@@ -199,9 +198,8 @@ let Parts = function() {
                 { targets: 1, title: "Id", responsivePriority: 1 },
                 { targets: 2, title: 'Name' , responsivePriority: 2 },
                 { targets: 3, title: 'Stock', responsivePriority: 3},
-                { targets: 4, title: 'Price', responsivePriority: 4},
-                { targets: 5, title: 'Subcategory', responsivePriority: 5},
-                { targets: 6, title: 'Location', responsivePriority: 6}
+                { targets: 4, title: 'Subcategory', responsivePriority: 5},
+                { targets: 5, title: 'Location', responsivePriority: 6}
             ],
 
             order: [[ 0, "asc" ]],

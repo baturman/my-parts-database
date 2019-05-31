@@ -207,8 +207,8 @@
 
         window.tinymce.init({
             selector: "textarea#notes",
-            plugins: "link",
-            toolbar: ["undo redo | styleselect | bold italic underline",
+            plugins: "link image emoticons preview table visualblocks wordcount powerpaste",
+            toolbar: ["undo redo | styleselect forecolor backcolor | bold italic underline",
                 'alignleft aligncenter alignright alignjustify | removeformat'],
             resize: false,
             height: 600,
