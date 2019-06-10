@@ -85,6 +85,51 @@ class LocationController extends Controller
             ->toMediaCollection('images');
 
         $location->save();
+
+                $location = new Location();
+        $location->name = "CB-SM-NOCL-01";
+        $location->description = "Motorobit (Small)";
+
+        $location
+            ->addMedia(storage_path('demo/locations/CB-00-NOCL.jpg'))
+            ->preservingOriginal()
+            ->toMediaCollection('images');
+
+        $location->save();
+
+                $location = new Location();
+        $location->name = "CB-XL-NAVY-01";
+        $location->description = "DC Power Supply Box";
+
+        $location
+            ->addMedia(storage_path('demo/locations/CB-00-NOCL.jpg'))
+            ->preservingOriginal()
+            ->toMediaCollection('images');
+
+        $location->save();
+
+                $location = new Location();
+        $location->name = "CB-XL-NAVY-01";
+        $location->description = "DC Power Supply Box";
+
+        $location
+            ->addMedia(storage_path('demo/locations/RXN-305.jpg'))
+            ->preservingOriginal()
+            ->toMediaCollection('images');
+
+        $location->save();
+
+                $location = new Location();
+        $location->name = "CB-LG-NOCL-01";
+        $location->description = "Robot Kutusu";
+
+        $location
+            ->addMedia(storage_path('demo/locations/CB-00-NOCL.jpg'))
+            ->preservingOriginal()
+            ->toMediaCollection('images');
+
+        $location->save();
+
         */
 
 
