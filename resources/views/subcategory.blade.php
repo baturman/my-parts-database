@@ -33,7 +33,7 @@
         </div>
     @endif
 
-    <div class="container">
+    <div class="container-fluid">
         <h1 class="bd-title" >{{ $subcategory->name }}</h1>
         <hr />
         @if($subcategory->description != null)
@@ -42,19 +42,19 @@
             <p class="bd-lead">No description for this sub-category.</p>
         @endif
 
-        <div class="card-columns"style="margin-top:50px" >
+        <div class="card-columns" style="margin-top:50px" >
             @foreach($subcategory->parts as $part)
                 <div class="card">
-                    <div class="card-header font-12 open-sans-condensed">
-                        {{ $part->name }}
-                    </div>
-                    <div class="card-body p-sm-1">
-                        <div class="row align-items-center">
-                            <div class="col-4">
-                                <img class="card-img-top" src="{{ $part->getFirstMediaUrl('images') }}" alt="Cover">
-                            </div>
-                            <div class="col-8">
-                                <dl class="row font-11">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <img class="card-img-top border border-2 m-3" src="{{ $part->getFirstMediaUrl('images') }}" alt="Cover">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body p-sm-1">
+                                <h5 class="card-title pt-3 pb-0 mb-0 font-13">{{ $part->name }}</h5>
+                                <span class="font-12" style="color: rgba(0,0,0,0.4)">{{ $part->description }}</span>
+
+                                <dl class="row font-13 mt-4">
                                     <dt class="col-sm-3 no-x-padding no-x-margin text-right" style="padding-right: 3px;">Brand: </dt>
                                     <dd class="col-sm-9 no-x-padding no-x-margin" style="padding-left: 3px">{{ $part->brand }}</dd>
                                     <dt class="col-sm-3 no-x-padding no-x-margin text-right" style="padding-right: 3px;">Model: </dt>
@@ -66,8 +66,8 @@
                                 </dl>
                             </div>
                         </div>
-
                     </div>
+
                     <div class="card-footer">
                         <button type="button" class="btn btn-secondary btn-sm">Details</button>
                     </div>

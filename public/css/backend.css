@@ -111,7 +111,7 @@ h4{
 }
 
 .font-color-lighter{
-    color: rgba(0,0,0,0.4);
+    color: rgba(0,0,0,0.4) !important;
 }
 
 .icon-color-light{
