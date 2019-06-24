@@ -12,6 +12,9 @@
             <li class="nav-item @isset($menu_categories_active) active @endisset">
                 <a class="nav-link" href="{{ route('backend.categories') }}">Categories</a>
             </li>
+            <li class="nav-item @isset($menu_locations_active) active @endisset">
+                <a class="nav-link" href="{{ route('locations.index') }}">Locations</a>
+            </li>
             <li class="nav-item dropdown @isset($menu_parts_active) active @endisset">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Parts

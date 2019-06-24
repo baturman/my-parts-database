@@ -21,7 +21,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('dashboard', 'BackendController@dashboard')->name('backend.dashboard');
 Route::get('categories', 'BackendController@categories')->name('backend.categories');
-Route::get('locations/create', 'LocationController@store')->name('backend.location');
+
+Route::resource('locations', 'LocationController');
+//Route::get('locations/create', 'LocationController@store')->name('backend.location');
 
 Route::resource('parts', 'PartController');
 

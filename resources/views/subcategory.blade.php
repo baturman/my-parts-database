@@ -55,21 +55,27 @@
                                 <span class="font-12" style="color: rgba(0,0,0,0.4)">{{ $part->description }}</span>
 
                                 <dl class="row font-13 mt-4">
-                                    <dt class="col-sm-3 no-x-padding no-x-margin text-right" style="padding-right: 3px;">Brand: </dt>
-                                    <dd class="col-sm-9 no-x-padding no-x-margin" style="padding-left: 3px">{{ $part->brand }}</dd>
-                                    <dt class="col-sm-3 no-x-padding no-x-margin text-right" style="padding-right: 3px;">Model: </dt>
-                                    <dd class="col-sm-9 no-x-padding no-x-margin" style="padding-left: 3px">{{ $part->model }}</dd>
+                                    <dt class="col-sm-3 no-x-padding no-x-margin text-right" style="padding-right: 3px;">Location: </dt>
+                                    <dd class="col-sm-9 no-x-padding no-x-margin" style="padding-left: 3px">{{ $part->location->name }}</dd>
+                                    <dt class="col-sm-3 no-x-padding no-x-margin text-right" style="padding-right: 3px;">URL: </dt>
+                                    <dd class="col-sm-9 no-x-padding no-x-margin" style="padding-left: 3px"><a href="{{ $part->url }}" target="_blank">Visit</a></dd>
                                     <dt class="col-sm-3 no-x-padding no-x-margin text-right" style="padding-right: 3px;">Price: </dt>
-                                    <dd class="col-sm-9 no-x-padding no-x-margin" style="padding-left: 3px">{{ $part->price }}</dd>
+                                    <dd class="col-sm-9 no-x-padding no-x-margin" style="padding-left: 3px">{{ $part->price }} ₺</dd>
                                     <dt class="col-sm-3 no-x-padding no-x-margin text-right" style="padding-right: 3px;">Stock: </dt>
-                                    <dd class="col-sm-9 no-x-padding no-x-margin" style="padding-left: 3px">{{ $part->amount }}</dd>
+                                    <dd class="col-sm-9 no-x-padding no-x-margin" style="padding-left: 3px">{{ $part->stock }}</dd>
+                                    <dt class="col-sm-3 no-x-padding no-x-margin text-right" style="padding-right: 3px;">Tags: </dt>
+                                    <dd class="col-sm-9 no-x-padding no-x-margin" style="padding-left: 3px">
+                                        @foreach($part->tags as $tag)
+                                            <span class="badge badge-secondary">{{ $tag->name }}</span>
+                                        @endforeach
+                                    </dd>
+                                    <dt class="col-sm-3 no-x-padding no-x-margin text-right" style="padding-right: 3px;">Created At: </dt>
+                                    <dd class="col-sm-9 no-x-padding no-x-margin" style="padding-left: 3px">{{ $part->created_at }}</dd>
+                                    <dt class="col-sm-3 no-x-padding no-x-margin text-right" style="padding-right: 3px;">Updated At: </dt>
+                                    <dd class="col-sm-9 no-x-padding no-x-margin" style="padding-left: 3px">{{ $part->updated_at }}</dd>
                                 </dl>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-secondary btn-sm">Details</button>
                     </div>
                 </div>
             @endforeach
