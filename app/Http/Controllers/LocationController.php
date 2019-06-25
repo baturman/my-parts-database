@@ -225,7 +225,28 @@ class LocationController extends Controller
             ->toMediaCollection('images');
 
         $location->save();
-        
+
+                $location = new Location();
+        $location->name = "BB-LG-BLCK-01";
+        $location->description = "Black Box";
+
+        $location
+            ->addMedia(storage_path('demo/locations/black-box.jpg'))
+            ->preservingOriginal()
+            ->toMediaCollection('images');
+
+        $location->save();
+
+                $location = new Location();
+        $location->name = "RT-MD-NAVY-01";
+        $location->description = "Robotistan Navy Medium";
+
+        $location
+            ->addMedia(storage_path('demo/locations/robotistan-navy-medium.jpg'))
+            ->preservingOriginal()
+            ->toMediaCollection('images');
+
+        $location->save();
         */
 
 

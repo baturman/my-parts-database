@@ -32,14 +32,14 @@
         </div>
     @endif
 
-    <div class="container">
-        <h4 style="margin-bottom: 30px">Database Browser:</h4>
-
+    <div class="container-fluid">
+        <h3 style="margin-bottom: 30px">Database Browser:</h3>
+        <hr />
         @foreach($categories as $category)
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-md-12" style="font-weight: bolder">{{ $category->name }}:</div>
                 @foreach($category->subcategories as $subcategory)
-                    <div class="col-md-4"><a href="/browse/sub-category/{{ $subcategory->slug }}">{{ $subcategory->name }}</a> ({{ count($subcategory->parts) }})</div>
+                    <div class="col-md-3"><a href="/browse/sub-category/{{ $subcategory->slug }}">{{ $subcategory->name }}</a> ({{ count($subcategory->parts) }})</div>
                 @endforeach
             </div>
             <br />

@@ -23,7 +23,7 @@ Route::get('dashboard', 'BackendController@dashboard')->name('backend.dashboard'
 Route::get('categories', 'BackendController@categories')->name('backend.categories');
 
 Route::resource('locations', 'LocationController');
-//Route::get('locations/create', 'LocationController@store')->name('backend.location');
+Route::get('locations/create', 'LocationController@store')->name('backend.location');
 
 Route::resource('parts', 'PartController');
 
