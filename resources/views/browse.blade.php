@@ -33,8 +33,6 @@
     @endif
 
     <div class="container-fluid">
-        <h3 style="margin-bottom: 30px">Database Browser:</h3>
-
         <div class="row">
             <div class="col-md-12">
                 @foreach($categories as $category)
