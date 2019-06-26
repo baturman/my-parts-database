@@ -34,18 +34,27 @@
 
     <div class="container-fluid">
         <h3 style="margin-bottom: 30px">Database Browser:</h3>
-        <hr />
-        @foreach($categories as $category)
-            <div class="row mt-3">
-                <div class="col-md-12" style="font-weight: bolder">{{ $category->name }}:</div>
-                @foreach($category->subcategories as $subcategory)
-                    <div class="col-md-3"><a href="/browse/sub-category/{{ $subcategory->slug }}">{{ $subcategory->name }}</a> ({{ count($subcategory->parts) }})</div>
+
+        <div class="row">
+            <div class="col-md-12">
+                @foreach($categories as $category)
+                    <div class="row">
+                        <div class="col-md-12 mt-3">
+                            <h5 class="font-weight-bolder"><span id="mc-{{ $category->id }}">{{ $category->name }}</span>
+                            </h5>
+                            <hr class="mt-1 mb-2"/>
+                        </div>
+                        @foreach($category->subcategories as $subcategory)
+                            <div class="col-md-3"><a href="/browse/sub-category/{{ $subcategory->slug }}">{{ $subcategory->name }}</a> ({{ count($subcategory->parts) }})</div>
+                        @endforeach
+                    </div>
+                    <br />
                 @endforeach
             </div>
-            <br />
-        @endforeach
+        </div>
 
     </div>
+</div>
 </body>
 </html>
 
