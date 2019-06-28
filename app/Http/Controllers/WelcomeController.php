@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Log;
 class WelcomeController extends Controller
 {
     public function index(){
-        return view('welcome');
+        return view('index');
     }
 
     public function find(Request $request)
@@ -26,8 +26,6 @@ class WelcomeController extends Controller
         $parts = Part::whereIn('id', $ids)->get();
         $parts->load('subcategory.category');
 
-        $subcategory = Subcategory::find(2);
-        Log::info($subcategory->getFirstMediaUrl('cover'));
         return PartsResource::collection($parts);
 
     }

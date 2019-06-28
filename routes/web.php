@@ -33,7 +33,7 @@ Route::resource('parts', 'PartController');
 
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
-Route::get('find', 'WelcomeController@find')->name('find');
+Route::get('/find', 'WelcomeController@find')->name('find');
 Route::get('browse', 'WelcomeController@browse')->name('browse');
 Route::get('browse/sub-category/{slug}', 'WelcomeController@subcategory')->name('subcategory');
 
